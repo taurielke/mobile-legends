@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.data.Discipline;
 import com.example.myapplication.data.DisciplineData;
+import com.google.android.material.textfield.TextInputEditText;
 
 
 public class UpdateFragment extends Fragment {
@@ -36,24 +37,25 @@ public class UpdateFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_update, container, false);
 
         Button btnSubmit = rootView.findViewById(R.id.btnSubmit);
-        TextView textViewName = rootView.findViewById(R.id.textViewName);
-        TextView textViewSem = rootView.findViewById(R.id.textView2);
-        TextView textViewTeachId = rootView.findViewById(R.id.textView3);
+
+        TextInputEditText textInputName = rootView.findViewById(R.id.textInputName);
+        TextInputEditText textInputSemester = rootView.findViewById(R.id.textInputSemester);
+        TextInputEditText textInputTeach = rootView.findViewById(R.id.textInputTeacherId);
 
         if (discipline != null) {
-            textViewName.setText(discipline.getName());
-            textViewSem.setText(discipline.getSemester());
-            textViewTeachId.setText(discipline.getTeacherId());
+            textInputName.setText(discipline.getName());
+            textInputSemester.setText(String.valueOf(discipline.getSemester()));
+            textInputTeach.setText(String.valueOf(discipline.getTeacherId()));
         }
 
         btnSubmit.setOnClickListener(v -> {
-            if (TextUtils.isEmpty(textViewName.getText()) || TextUtils.isEmpty(textViewSem.getText()) || TextUtils.isEmpty(textViewTeachId.getText())) {
+            if (TextUtils.isEmpty(textInputName.getText()) || TextUtils.isEmpty(textInputSemester.getText()) || TextUtils.isEmpty(textInputTeach.getText())) {
                 Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_LONG).show();
                 return;
             }
-            String name = textViewName.getText().toString();
-            int semester = Integer.parseInt(textViewSem.getText().toString());
-            int teachId = Integer.parseInt(textViewTeachId.getText().toString());
+            String name = textInputName.getText().toString();
+            int semester = Integer.parseInt(textInputSemester.getText().toString());
+            int teachId = Integer.parseInt(textInputTeach.getText().toString());
             if (discipline != null) {
                 disciplineData.updateDiscipline(discipline.getId(), name, semester, teachId);
             } else {
@@ -68,10 +70,6 @@ public class UpdateFragment extends Fragment {
 
     public void setDiscipline(Discipline discipline) {
         this.discipline = discipline;
-    }
-
-    public Discipline getDiscipline() {
-        return discipline;
     }
 
 }

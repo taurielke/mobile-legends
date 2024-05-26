@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     DisciplineData disciplineData;
     ArrayAdapter<Discipline> adapter;
-    ListView listView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,13 @@ public class MainActivity extends AppCompatActivity {
         Button btnReport = findViewById(R.id.btnReport);
         Button btnExport = findViewById(R.id.btnExport);
         Button btnImport = findViewById(R.id.btnImport);
+        Button btnRefresh = findViewById(R.id.btnRefresh);
 
-        listView = findViewById(R.id.listView);
+        btnRefresh.setOnClickListener(v->{
+            adapter.notifyDataSetChanged();
+        });
+
+        ListView listView = findViewById(R.id.listView);
 
         adapter = new ArrayAdapter<Discipline>(this, android.R.layout.simple_list_item_1,
                 disciplineData.findAllDiscipline());
@@ -72,11 +77,6 @@ public class MainActivity extends AppCompatActivity {
             if (discipline == -1){
                 return;
             }
-            /*int position = listView.getCheckedItemPosition();
-            if (position != ListView.INVALID_POSITION) {
-                Discipline item = adapter.getItem(position);
-                showEditFragment(item);
-            }*/
             adapter.notifyDataSetChanged();
             listView.clearChoices();
         });
@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         btnImport.setOnClickListener(v -> {
             importDataFromJson();
         });
+
     }
 
     private void showEditFragment(Discipline discipline){
@@ -108,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragmentContainer, updateFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+        adapter.notifyDataSetChanged();
     }
 
     private void exportDataToJson() {
@@ -143,7 +145,9 @@ public class MainActivity extends AppCompatActivity {
             disciplineData.deleteAll();
             for (Discipline discipline : disciplineList) {
                 disciplineData.addDiscipline(discipline.getName(), discipline.getSemester(), discipline.getTeacherId());
+
             }
+            adapter.notifyDataSetChanged();
             Toast.makeText(this, "Data imported successfully", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();

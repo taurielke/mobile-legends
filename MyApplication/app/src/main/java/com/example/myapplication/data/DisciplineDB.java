@@ -25,7 +25,7 @@ public class DisciplineDB {
             int idIndex = c.getColumnIndex("id");
             int nameIndex = c.getColumnIndex("name");
             int semesterIndex = c.getColumnIndex("semester");
-            int teacherIdIndex = c.getColumnIndex("teacherName");
+            int teacherIdIndex = c.getColumnIndex("teacherId");
             Discipline d = new Discipline();
             d.setId(c.getInt(idIndex));
             d.setName(c.getString(nameIndex));

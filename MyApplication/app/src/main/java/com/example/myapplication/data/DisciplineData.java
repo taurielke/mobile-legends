@@ -41,12 +41,6 @@ public class DisciplineData {
         disciplinesDB.update(discipline);
         readAll();
     }
-    public void deleteDiscipline(int id){
-        Discipline discipline = new Discipline();
-        discipline.setId(id);
-        disciplinesDB.delete(discipline);
-        readAll();
-    }
 
     public void deleteAll(){
         disciplines.clear();

@@ -12,7 +12,9 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
-        android:layout_height="1000px">
+        android:layout_height="1000px"
+        android:choiceMode="singleChoice"
+        android:listSelector="@android:color/darker_gray">
 
     </ListView>
 
@@ -61,12 +63,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/nameBtnImport" />
+
+        <Button
+            android:id="@+id/btnRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="*" />
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
-        android:name="com.example.myapplication.UpdateFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_update" />
 
 </LinearLayout>

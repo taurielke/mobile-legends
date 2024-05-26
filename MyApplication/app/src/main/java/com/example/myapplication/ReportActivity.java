@@ -29,20 +29,51 @@ public class ReportActivity extends AppCompatActivity {
         setContentView(R.layout.activity_report);
 
 
-        disciplineData = new DisciplineData(this);
+        disciplineData = new DisciplineData(this);/////////////////////
 
         Button btnReport = findViewById(R.id.btnCreateReport);
         Button btnBack = findViewById(R.id.btnBack);
         tableLayout = findViewById(R.id.table);
         tableLayout.removeAllViews();
 
-        disciplineList = disciplineData.findAllDiscipline();
+        disciplineList = disciplineData.findAllDiscipline();////////////////////
 
         btnReport.setOnClickListener(v->{
             tableLayout.removeAllViews();
-            int targetSemester = 2;
+
+
+            TableRow headerRow = new TableRow(this);
+            TableRow.LayoutParams headerLayoutParams = new TableRow.LayoutParams(
+                    TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
+            headerRow.setLayoutParams(headerLayoutParams);
+
+            TextView nameHeader = new TextView(this);
+            nameHeader.setText("Name");
+
+            TextView semesterHeader = new TextView(this);
+            semesterHeader.setText("Semester");
+
+            TextView teacherIdHeader = new TextView(this);
+            teacherIdHeader.setText("Teacher ID");
+
+            // Добавляем заголовки в headerRow
+            headerRow.addView(nameHeader);
+            headerRow.addView(semesterHeader);
+            headerRow.addView(teacherIdHeader);
+
+            // Добавляем headerRow в таблицу
+            tableLayout.addView(headerRow);
+
+
+            int targetSemester = 2;//////////////////
+
+
             for (Discipline discipline : disciplineList) {
-                if (discipline.getSemester() == targetSemester) {
+
+
+                if (discipline.getSemester() == targetSemester) {///////////////////////
+
+
                     TableRow row = new TableRow(this);
                     TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(
                             TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
@@ -69,12 +100,6 @@ public class ReportActivity extends AppCompatActivity {
         btnBack.setOnClickListener(v->{
             finish();
         });
-
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });*/
 
     }
 }

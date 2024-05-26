@@ -41,6 +41,6 @@ public class Discipline {
 
     @Override
     public String toString() {
-        return name;
+        return "name: " + name + ", semester: " + semester;
     }
 }
