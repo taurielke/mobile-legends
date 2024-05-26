@@ -16,8 +16,6 @@ import com.example.myapplication.data.DisciplineData;
 
 import java.util.List;
 
-import missing.namespace.R;
-
 public class ReportActivity extends AppCompatActivity {
 
     private DisciplineData disciplineData;

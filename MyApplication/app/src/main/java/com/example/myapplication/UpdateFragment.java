@@ -17,8 +17,6 @@ import android.widget.Toast;
 import com.example.myapplication.data.Discipline;
 import com.example.myapplication.data.DisciplineData;
 
-import missing.namespace.R;
-
 
 public class UpdateFragment extends Fragment {
 

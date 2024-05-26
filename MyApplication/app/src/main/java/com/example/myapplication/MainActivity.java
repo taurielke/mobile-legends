@@ -26,7 +26,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.List;
 
-import missing.namespace.R;
+
 
 
 public class MainActivity extends AppCompatActivity {
