@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Мое приложение</string>
+    <string name="welcome_message">Добро пожаловать!</string>
+    <string name="nameBtnAdd">Добавить</string>
+    <string name="nameBtnUpd">Обновить</string>
+    <string name="nameBtnReport">Создать отчет</string>
+    <string name="nameBtnExport">Экспорт в JSON</string>
+    <string name="nameBtnImport">Импорт из JSON</string>
+</resources>

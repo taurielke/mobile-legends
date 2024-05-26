@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My App</string>
+    <string name="welcome_message">Welcome</string>
+    <string name="nameBtnAdd">Add</string>
+    <string name="nameBtnUpd">Update</string>
+    <string name="nameBtnReport">Report</string>
+    <string name="nameBtnExport">Export to JSON</string>
+    <string name="nameBtnImport">Import from JSON</string>
+</resources>
