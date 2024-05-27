@@ -6,41 +6,17 @@
     android:orientation="vertical"
     tools:context=".UpdateFragment" >
 
-    <TextView
-        android:id="@+id/textViewName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="name" />
-
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="insert a name" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="semester" />
-
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputSemester"
+        android:id="@+id/textInputTour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="insert a semester" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="teacherId" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputTeacherId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="insert teacher's id" />
+        android:hint="insert a tour" />
 
     <Button
         android:id="@+id/btnSubmit"

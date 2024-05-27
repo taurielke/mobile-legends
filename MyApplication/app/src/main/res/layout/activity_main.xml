@@ -9,10 +9,16 @@
     app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity" >
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_update" />
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
-        android:layout_height="1000px"
+        android:layout_height="1200px"
         android:choiceMode="singleChoice"
         android:listSelector="@android:color/darker_gray">
 
@@ -52,17 +58,24 @@
 
         <Button
             android:id="@+id/btnExport"
-            android:layout_width="520px"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/nameBtnExport" />
 
         <Button
             android:id="@+id/btnImport"
-            android:layout_width="520px"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/nameBtnImport" />
+
+        <Button
+            android:id="@+id/btnDel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/nameBtnDel" />
 
         <Button
             android:id="@+id/btnRefresh"
@@ -71,11 +84,5 @@
             android:layout_weight="1"
             android:text="*" />
     </LinearLayout>
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_update" />
 
 </LinearLayout>

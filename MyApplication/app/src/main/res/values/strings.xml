@@ -6,4 +6,5 @@
     <string name="nameBtnReport">Report</string>
     <string name="nameBtnExport">Export to JSON</string>
     <string name="nameBtnImport">Import from JSON</string>
+    <string name="nameBtnDel">Delete</string>
 </resources>

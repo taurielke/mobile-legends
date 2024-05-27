@@ -7,4 +7,5 @@
     <string name="nameBtnReport">Создать отчет</string>
     <string name="nameBtnExport">Экспорт в JSON</string>
     <string name="nameBtnImport">Импорт из JSON</string>
+    <string name="nameBtnDel">Удалить</string>
 </resources>

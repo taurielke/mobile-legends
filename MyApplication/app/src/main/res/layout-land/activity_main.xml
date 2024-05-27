@@ -29,6 +29,13 @@
             android:text="@string/nameBtnUpd" />
 
         <Button
+            android:id="@+id/btnDel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/nameBtnDel" />
+
+        <Button
             android:id="@+id/btnReport"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
